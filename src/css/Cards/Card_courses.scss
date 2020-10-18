@@ -1,0 +1,54 @@
+.Courses_card {
+  max-width: 293px;
+  margin: 30px 20px;
+  border-radius: 1rem;
+  box-shadow: 0px 0px 5px 0px black;
+  h1 {
+    width: fit-content;
+    font-size: 1.4rem;
+  }
+  &__containerImg {
+    padding: 1.5rem;
+    background-color: $color-commun;
+    color: $color-white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 1rem 1rem 0 0;
+    img {
+      border-radius: 4rem;
+      width: 94px;
+      max-width: 100px;
+    }
+  }
+  .description_cont {
+    padding: 0.8rem 2rem;
+    max-height: 88px;
+    overflow: auto;
+  }
+  .pub_cont {
+    padding: 0.8rem 2rem;
+    list-style: circle;
+    background-color: $color-dark;h3 {
+      color: $color-white;
+    }
+    li {
+      color: #fa8ea0;
+      font-size: 1.1rem;
+      line-height: 2rem;
+    }
+  }
+  .buttons {
+    text-align: center;
+    padding: 1rem;
+  }
+  .date {
+    font-style: italic;
+    font-weight: 100;
+    padding: 1rem;
+    text-align: center;
+    background-color: #C9243F;
+    color: $color-white;
+    border-radius: 0 0 1rem 1rem;
+  }
+}

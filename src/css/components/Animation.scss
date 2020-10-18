@@ -1,0 +1,18 @@
+.butterfly {
+  width: 76px;
+  height: 73px;
+  background-repeat: no-repeat;
+  background-image: url('../images/butterfly.png');
+  animation: fly 1s infinite;
+}
+
+@keyframes fly {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    // background-position: right;
+    background-position: -700px 0;
+  }
+}

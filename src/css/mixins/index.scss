@@ -1,0 +1,87 @@
+@mixin button_submit {
+  background-color: $color-light;
+  border: none;
+  outline: none;
+  &:focus {
+    background-color: #e9e9e9;
+    color: #c9243f;
+    border: 1px solid #c9243f;
+    box-shadow: 0 0 17px 1px #c92444;
+    transform: scale(.9);
+    transition: .2s;
+    outline: none;
+  }
+  &:hover {
+    box-shadow: 0 0 17px 1px #c92444;
+  }
+}
+
+@mixin alert {
+  position: relative;
+  padding: 25px;
+  margin: 5px;
+  font-size: 1.2rem;
+  display: flex;
+  border: 1px solid $color-all;
+}
+
+@mixin dark_mode {
+  background-color: $color-dark;
+  .Profile {
+    h1 {
+      color: $color-white;
+    }
+  }
+  .Card__Profile .info_user {
+    background-color: $color-white;
+  }
+  .Alert {
+    &__Warning {
+      color: rgb(83, 235, 255);
+    }
+    &__Success {
+      color: rgb(83, 255, 149);
+    }
+    &__Error {
+      background-color: rgba($color-light, .3);
+      color: #ff9d9d;
+    }
+  }
+  .Home {
+    .arrow-right, .arrow-left {
+      background-color: $color-white;
+      color: #c8233e;
+    }
+  }
+  .Home .Menu {
+    background-color: $color-white;
+    .Menu_nav--user li a, .Menu_nav--data li a {
+      color: #c8233e;
+    }
+  }
+  .Courses {
+    h1 {
+      color: $color-white;
+    }
+  }
+}
+
+@mixin title {
+  margin: 20px 0;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 1.8rem;
+    font-weight: 800;
+    font-family: $font-1;
+    padding-bottom: 1.5rem;
+    border-bottom: 3px solid $color-light;
+    i {
+      margin-right: 10px;
+    }
+}
+
+@mixin btn {
+  padding: 1rem;
+  border: none;
+  margin: .5rem;
+}

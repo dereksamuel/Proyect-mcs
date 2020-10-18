@@ -1,25 +1,43 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import Login from './pages/Login.jsx';
+import { AuthProvider } from './components/Auth.jsx';
+import PrivateRoutes from './components/PrivateRoutes.jsx';
+
+import Animation from './components/Animation.jsx';
+import Profile from './pages/Profile.jsx';
+import Courses from './pages/Courses';
+import Home from './pages/Home';
+import './css/index.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AuthProvider>
+      <BrowserRouter forceRefresh={false}>
+        <Switch>
+          <Route exact path="/signin">
+            <Login></Login>
+          </Route>
+          <Home>
+            <PrivateRoutes
+              exact
+              path="/"
+              component={(props) => <Profile
+              // selectedPage={props.history.location.state.selectedPage}
+              />}></PrivateRoutes>
+            <PrivateRoutes
+              exact
+              path="/courses"
+              component={(props) => <Courses
+              // selectedPage={props.location.state.selectedPage}
+              />}></PrivateRoutes>
+            <PrivateRoutes
+              path="/an"
+              component={() => <Animation />} />
+          </Home>
+        </Switch>
+      </BrowserRouter>
+    </AuthProvider>
   );
 }
 

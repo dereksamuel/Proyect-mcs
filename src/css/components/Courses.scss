@@ -1,0 +1,39 @@
+.Courses {
+  width: 100vw;
+  height: calc(100vh - 69px);
+  .h1_title {
+    @include title;
+  }
+  .container {
+    padding: 3rem;
+    margin-top: -64px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding-top: 0;
+  }
+  &_content {
+    position: relative;
+    width: 38px;
+    margin-top: -20px;
+    height: 65px;
+    margin-top: -20px;
+    .add_course {
+      position: absolute;
+      left: 14px;
+      top: 10px;
+      @include button_submit;
+      padding: 1rem;
+      background-color: $color-success;
+      color:#245a33;
+      &:focus, &:hover {
+        box-shadow: 0 0 17px 1px hsl(137, 100%, 67%);
+      }
+      &:focus {
+        border-color: #245a33;
+        color: #245a33;
+      }
+    }
+  }
+}

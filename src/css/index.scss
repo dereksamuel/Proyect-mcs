@@ -1,0 +1,153 @@
+$color-light: #e43f5a;
+$color-dark: #1b1b2f;
+$color-variant: #1f4068;
+$color-commun: #162447;
+$color-all: #252525;
+$color-white: #f8f7f7;
+$color-success: #4FC16E;
+
+$font-1: 'Montserrat', sans-serif;
+$font-2: 'Rubik', sans-serif;
+
+@function setButton($color) {
+  @return 0 0 17px 1px $color;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $font-2;
+}
+
+html {
+  font-size: 80%;
+}
+
+body {
+  color: $color-all;
+  transition: .2s;
+}
+
+.Home .Menu .Menu_nav--user li a.is-selected,
+.Home .Menu .Menu_nav--data li a.is-selected {
+  color: $color-success;
+  .arrow {
+    position: absolute;
+    top: 0;
+    width: 0;
+    height: 0;
+    border-left: 20px solid #0000;
+    border-right: 20px solid #0000;
+    border-top: 21px solid $color-white;
+  }
+}
+
+.DarkMode .Home .Menu .Menu_nav--data li a.is-selected,
+.DarkMode .Home .Menu .Menu_nav--user li a.is-selected {
+  color: $color-variant;
+  .arrow {
+    position: absolute;
+    top: 0;
+    width: 0;
+    height: 0;
+    border-left: 20px solid #0000;
+    border-right: 20px solid #0000;
+    border-top: 21px solid $color-dark;
+  }
+}
+
+.firebaseui-idp-list {
+  list-style: none;
+}
+
+.btn {
+  @include button_submit;
+  @include btn;
+  border-radius: 5px;
+}
+
+.btn.success {
+  background-color: $color-success;
+  color: #06270f;
+  &:focus {
+    background-color: #e9e9e9;
+    color: #2a7514;
+    border: 1px solid #2a7514;
+    box-shadow: setButton(#2a7514);
+    transform: scale(.9);
+    transition: .2s;
+    outline: none;
+  }
+  &:hover {
+    box-shadow: setButton(#2a7514);
+  }
+}
+
+.btn.error {
+  background-color: $color-light;
+  color: #260c0c;
+  &:focus {
+    background-color: #e9e9e9;
+    color: $color-light;
+    border: 1px solid $color-light;
+    box-shadow: setButton($color-light);
+    transform: scale(.9);
+    transition: .2s;
+    outline: none;
+  }
+  &:hover {
+    box-shadow: setButton($color-light);
+  }
+}
+
+.btn.warning {
+  background-color: $color-dark;
+  color: $color-white;
+  &:focus {
+    background-color: #e9e9e9;
+    color: $color-dark;
+    border: 1px solid $color-white;
+    box-shadow: setButton($color-white);
+    transform: scale(.9);
+    transition: .2s;
+    outline: none;
+  }
+  &:hover {
+    box-shadow: setButton($color-white);
+  }
+}
+
+.firebaseui-idp-button {
+  position: absolute;
+  bottom: 0;
+  padding: 15px;
+  border-radius: 10em;
+  left: 28px;
+  background: none;
+  border: none;
+  display: flex;
+  align-items: center;
+}
+
+.firebaseui-idp-button img {
+  width: 30px;
+}
+
+.firebaseui-idp-text {
+  margin: 5px;
+  font-size: 1.3rem;
+  color: #950b21;
+}
+
+.firebaseui-idp-text.firebaseui-idp-text-short {
+  display: none;
+}
+
+.DarkMode {
+  @include dark_mode;
+}
+
+@function cotheme($color, $level) {
+  @return rgba($color, $level);
+}

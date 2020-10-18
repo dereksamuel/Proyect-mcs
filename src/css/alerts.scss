@@ -1,0 +1,36 @@
+.Alert {
+  &__Error {
+    @include alert;
+    color: #8b081e;
+    border-color: #8b081e;
+    background-color: cotheme($color-light, .5);
+    p {
+      margin-left: 15px;
+    }
+  }
+  &__Success {
+    @include alert;
+    color:#245a33;
+    border-color: #245a33;
+    background-color: cotheme($color-success, .5);
+    p {
+      margin-left: 15px;
+    }
+  }
+  &__Warning {
+    @include alert;
+    color:#082b8b;
+    border-color: #082b8b;
+    background-color: cotheme($color-variant, .5);
+    p {
+      margin-left: 15px;
+    }
+  }
+  .Categroy {
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+    padding: .2rem;
+    font-style: italic;
+  }
+}
