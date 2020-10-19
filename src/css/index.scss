@@ -29,6 +29,16 @@ body {
   transition: .2s;
 }
 
+::-webkit-scrollbar {
+  width: 7px;
+  z-index: 0;
+  background-color: $color-all;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #950b21;
+}
+
 .Home .Menu .Menu_nav--user li a.is-selected,
 .Home .Menu .Menu_nav--data li a.is-selected {
   color: $color-success;

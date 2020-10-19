@@ -14,6 +14,16 @@ body {
   transition: 0.2s;
 }
 
+::-webkit-scrollbar {
+  width: 7px;
+  z-index: 0;
+  background-color: #252525;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #950b21;
+}
+
 .Home .Menu .Menu_nav--user li a.is-selected,
 .Home .Menu .Menu_nav--data li a.is-selected {
   color: #4FC16E;
@@ -178,6 +188,18 @@ body {
 }
 .DarkMode .Courses h1 {
   color: #f8f7f7;
+}
+.DarkMode .Courses_card .description_cont {
+  color: #f8f7f7;
+}
+.DarkMode .Courses_card .pub_cont {
+  background-color: #f8f7f7;
+}
+.DarkMode .Courses_card .pub_cont h3 {
+  color: #252525;
+}
+.DarkMode .Courses_card .pub_cont li {
+  color: #c9243f;
 }
 
 .Login {
@@ -885,7 +907,7 @@ body {
 
 .Courses {
   width: 100vw;
-  height: calc(100vh - 69px);
+  height: calc(100vh - 105px);
 }
 .Courses .h1_title {
   margin: 20px 0;

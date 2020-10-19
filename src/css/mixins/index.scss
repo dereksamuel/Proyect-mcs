@@ -63,6 +63,20 @@
     h1 {
       color: $color-white;
     }
+    &_card {
+      .description_cont {
+        color: $color-white;
+      }
+      .pub_cont {
+        background-color: $color-white;
+        h3 {
+          color: $color-all;
+        }
+        li {
+          color: #c9243f;
+        }
+      }
+    }
   }
 }
 
