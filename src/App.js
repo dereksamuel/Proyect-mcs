@@ -18,7 +18,7 @@ function App() {
           <Route exact path="/signin">
             <Login></Login>
           </Route>
-          <Home>
+          <PrivateRoutes component={() => <Home>
             <PrivateRoutes
               exact
               path="/"
@@ -34,7 +34,7 @@ function App() {
             <PrivateRoutes
               path="/an"
               component={() => <Animation />} />
-          </Home>
+          </Home>} />
         </Switch>
       </BrowserRouter>
     </AuthProvider>

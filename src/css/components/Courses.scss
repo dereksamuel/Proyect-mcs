@@ -37,3 +37,23 @@
     }
   }
 }
+
+.Create_course {
+  line-height: 2rem;
+  .input {
+    width: 100%;
+    padding: .5rem;
+  }
+  .textarea {
+    width: 100%;
+    max-width: 100%;
+    min-width: 100%;
+    min-height: 15px;
+    max-height: 69px;
+    padding: .5rem;
+  }
+  .progress_data--info {
+    height: 10px;
+    background-color: #7fffd4;
+  }
+}

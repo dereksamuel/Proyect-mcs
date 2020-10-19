@@ -1,16 +1,29 @@
 import React from 'react';
+import { useEffect } from 'react';
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
-const Card_courses = () => {
+import { storage } from '../helpers/firebase';
+
+const Card_courses = ({ fullName, description, img, link, date }) => {
+  const [url, setUrl] = useState('');
+  async function getUrl() {
+    const ref = await storage.ref().child(img).getDownloadURL();
+    setUrl(ref);
+  }
+  useEffect(() => {
+    getUrl();
+  }, []);
   return (
     <section className="Courses_card">
       <div className="animation-delay"></div>
       <figure className="Courses_card__containerImg">
-        <img src="https://www.gravatar.com/avatar/52f1dce4d23c899f6ea7bbc57e6508d6?d=identicon" alt="name"/>
-        <h1>Name</h1>
+        <img src={url} alt="name"/>
+        <h1>{ fullName }</h1>
       </figure>
       <article className="description_cont">
         <h3>Descripción:</h3>
-        <p className="description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Possimus eum tempore nemo sunt velit corporis distinctio! Quas laborum aspernatur magni quae ipsam, optio nihil, voluptatum obcaecati modi debitis minima porro.</p>
+        <p className="description">{ description }</p>
       </article>
       <ul className="pub_cont">
         <h3>Publicaciones:</h3>
@@ -18,11 +31,11 @@ const Card_courses = () => {
         <li>Nos enseña</li>
       </ul>
       <div className="buttons">
-        <button className="btn warning">Tareas</button>
+        <Link to={link}><button className="btn warning">Tareas</button></Link>
         <button className="btn success"><i className="fas fa-edit"></i> Editar</button>
         <button className="btn error"><i className="fas fa-trash"></i> Borrar</button>
       </div>
-      <h2 className="date">10/02/2013</h2>
+      <h2 className="date">{ date }</h2>
     </section>
   );
 }

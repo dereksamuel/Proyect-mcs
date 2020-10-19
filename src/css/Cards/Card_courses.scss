@@ -16,8 +16,10 @@
     align-items: center;
     border-radius: 1rem 1rem 0 0;
     img {
-      border-radius: 4rem;
-      width: 94px;
+      border-radius: 6rem;
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
       max-width: 100px;
     }
   }

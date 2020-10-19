@@ -650,7 +650,7 @@ body {
   padding: 1.1rem;
   left: 25%;
   right: 25%;
-  top: 25%;
+  top: 20%;
   bottom: 25%;
   line-height: 3rem;
 }
@@ -947,6 +947,26 @@ body {
   color: #245a33;
 }
 
+.Create_course {
+  line-height: 2rem;
+}
+.Create_course .input {
+  width: 100%;
+  padding: 0.5rem;
+}
+.Create_course .textarea {
+  width: 100%;
+  max-width: 100%;
+  min-width: 100%;
+  min-height: 15px;
+  max-height: 69px;
+  padding: 0.5rem;
+}
+.Create_course .progress_data--info {
+  height: 10px;
+  background-color: #7fffd4;
+}
+
 .Courses_card {
   max-width: 293px;
   margin: 30px 20px;
@@ -967,8 +987,10 @@ body {
   border-radius: 1rem 1rem 0 0;
 }
 .Courses_card__containerImg img {
-  border-radius: 4rem;
-  width: 94px;
+  border-radius: 6rem;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
   max-width: 100px;
 }
 .Courses_card .description_cont {

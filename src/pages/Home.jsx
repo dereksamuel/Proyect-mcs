@@ -1,21 +1,11 @@
 import React, { useEffect } from 'react';
+import RouterCarousel from 'react-router-carousel';
 import { withRouter } from 'react-router';
 import { NavLink } from 'react-router-dom';
 
+import Error404 from './Error404';
+
 const Home = ({ children, history }) => {
-  function scrollLeft() {
-    history.goBack();
-    const carrousel = document.querySelector('.carrousel_container');
-    carrousel.scrollLeft -= carrousel.offsetWidth;
-  }
-  function scrollRight() {
-    if (history.length === 0) {
-      console.log(null);
-    }
-    history.goForward();
-    const carrousel = document.querySelector('.carrousel_container');
-    carrousel.scrollLeft += carrousel.offsetWidth;
-  }
   const loadStatus = () => {
     const getInstance = localStorage.getItem('dark_mode');
     if (getInstance === 'true') {
@@ -29,11 +19,17 @@ const Home = ({ children, history }) => {
   }, []);
   return (
     <main className="Home">
-      <button className="arrow-left" onClick={scrollLeft}><i className="fas fa-hand-point-left"></i></button>
+      <button className="arrow-left" onClick={() => history.goBack()}><i className="fas fa-hand-point-left"></i></button>
       <div className="carrousel_container">
-        {
-          children
-        }
+        <RouterCarousel
+          swipeLeftClassName={'router-carousel-zone router-carousel-zone--left'}
+          swipeRightClassName={'router-carousel-zone router-carousel-zone--right'}
+          fallbackRoute={<Error404 />}
+        >
+          {
+            children
+          }
+        </RouterCarousel>
         <footer className="Menu">
           <nav className="Menu_nav--data">
             <ul>
@@ -51,7 +47,7 @@ const Home = ({ children, history }) => {
           </nav>
         </footer>
       </div>
-      <button className="arrow-right" onClick={scrollRight}><i className="fas fa-hand-point-right"></i></button>
+      <button className="arrow-right" onClick={() => history.goForward()}><i className="fas fa-hand-point-right"></i></button>
     </main>
   );
 }

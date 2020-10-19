@@ -1,12 +1,8 @@
 import React from 'react';
 import { Card_Profile } from '../components/Card';
 import firebase from '../helpers/firebase';
-import { withRouter } from 'react-router';
 
-const Profile = ({ history }) => {
-  // if (!firebase.auth().currentUser) {
-  //   return (<h1>Inicia sesión</h1>);
-  // }
+const Profile = () => {
   return (
     <div className="Profile">
       <h1><i className="fas fa-home"></i><strong>Inicio</strong></h1>
@@ -17,4 +13,4 @@ const Profile = ({ history }) => {
   );
 }
 
-export default withRouter(Profile);
+export default Profile;
